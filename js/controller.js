@@ -1,6 +1,3 @@
-columns.controller('MainController', function($scope, $rootScope, SegmentBuilder) {
-  $scope.dataMainGroup = SegmentBuilder.currentSegment;
-});
-lines.controller('MainController', function($scope, $rootScope, SegmentBuilder) {
+app.controller('MainController', function($scope, $rootScope, SegmentBuilder) {
   $scope.dataMainGroup = SegmentBuilder.currentSegment;
 });

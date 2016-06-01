@@ -15,7 +15,7 @@ input,
 
 .main-container {
   display: block;
-  width: 300px;
+
   padding: 10px;
 }
 .main-container select {
@@ -275,8 +275,8 @@ input,
   font-size: 24px;
 }
 .main-container .drop-zone.first-inside-group {
-  top: -20px;
-  left: -20px;
+  top: 14px;
+  left: -25px;
 }
 .main-container .drop-zone.group-empty {
   top: auto;
@@ -293,12 +293,12 @@ input,
   display: none;
 }
 .main-container .drop-zone.after-elem {
-  left: -20px;
-  bottom: -14px;
+  left: 184px;
+  bottom: 19px;
 }
 .main-container .drop-zone.after-group {
-  left: -26px;
-  bottom: -15px;
+  left: 180px;
+  bottom: 17px;
 }
 .main-container .drop-zone.drag-hover {
   opacity: 1;

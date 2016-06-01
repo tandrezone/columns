@@ -1,4 +1,4 @@
-columns.factory('SegmentBuilder', function() {
+app.factory('SegmentBuilder', function() {
 
     var groupInfo = {
 
@@ -15,7 +15,7 @@ columns.factory('SegmentBuilder', function() {
 
     var data = {
         position: 1,
-        type: 'column',
+        type: 'line',
         elements: [
 
         ]
@@ -156,19 +156,7 @@ columns.factory('SegmentBuilder', function() {
         var jsonToSend = JSON.stringify(data);
         console.log(jsonToSend);
         console.log(data);
-        aux = {"type":"coluna", "elements":[]};
-        console.log(convertToWebservice(data.elements, aux.elements));
     };
-
-    var convertToWebservice= function(data, aux){
-      for(var a = 0; a < data.length; a++){
-        aux.push({"name":data[a].name, "type":data[a].type, "elements":[]})
-        if(data[a].elements.length != 0){
-          convertToWebservice(data[a].elements, aux.elements)
-        }
-      }
-      return aux;
-    }
 
 
 

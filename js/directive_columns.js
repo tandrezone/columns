@@ -1,4 +1,4 @@
-columns.directive("segmentBuilderGroupC", function() {
+app.directive("segmentBuilderGroup", function() {
     return {
         restrict: "E",
         replace: true,
@@ -10,7 +10,7 @@ columns.directive("segmentBuilderGroupC", function() {
             duplicatePlease: '&',
             deletePlease: '&'
         },
-        templateUrl:  'segmentBuilderGroupTplC',
+        templateUrl:  'segmentBuilderGroupTpl',
         controller: function($scope, $rootScope, SegmentBuilder, $http) {
           //$scope.parts =[0];
             $http({
@@ -93,7 +93,7 @@ columns.directive("segmentBuilderGroupC", function() {
 });
 
 
-columns.directive("segmentBuilderElement", function($compile) {
+app.directive("segmentBuilderElement", function($compile) {
     return {
         restrict: "E",
         replace: true,
@@ -106,7 +106,7 @@ columns.directive("segmentBuilderElement", function($compile) {
         },
         template: '',
         link: function (scope, element, attrs) {
-            var subElementsString = '<segment-builder-group-c drag\ data="data"\ parent-id="parentId"\ level="level"\ delete-please="deletePlease({id: data.id})"\ ></segment-builder-group-c>';
+            var subElementsString = '<segment-builder-group drag\ data="data"\ parent-id="parentId"\ level="level"\ delete-please="deletePlease({id: data.id})"\ ></segment-builder-group>';
 
             if (angular.isArray(scope.data.elements)) {
                 $compile(subElementsString)(scope, function(cloned, scope) {
@@ -118,7 +118,7 @@ columns.directive("segmentBuilderElement", function($compile) {
     };
 });
 
-columns.directive("drag", function($rootScope, $timeout) {
+app.directive("drag", function($rootScope, $timeout) {
   return {
     restrict: 'A',
     link: function(scope, element, attrs)  {
@@ -161,7 +161,7 @@ columns.directive("drag", function($rootScope, $timeout) {
   }
 });
 
-columns.directive("dropTarget", function($rootScope, $timeout, SegmentBuilder) {
+app.directive("dropTarget", function($rootScope, $timeout, SegmentBuilder) {
   return {
     restrict: 'E',
     replace: true,
